@@ -82,7 +82,7 @@ app.use(notFoundHandler)
 // common error handler
 app.use(errorHandler)
 
-server.listen(process.env.PORT, () => {
+server.listen(process.env.PORT || 8000, () => {
   // console.log(`Server running at port ${process.env.PORT}...`)
 })
 
