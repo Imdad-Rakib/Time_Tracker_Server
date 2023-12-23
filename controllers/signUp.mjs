@@ -33,7 +33,7 @@ async function sendVerificationMail(req, res, next) {
         const uriEncodedToken = encodeURIComponent(token);
         await connection.execute('DELETE FROM tempToken WHERE email = ?', [req.body.email]);
         await connection.execute(`INSERT INTO tempToken (name, email, password, token) VALUES (?, ?, ?, ?)`, [req.body.name, req.body.email, hashedPassword, token]);
-        let url = `http://localhost:8000/signUp/tokenValidation/${uriEncodedToken}`;
+        let url = `https://time-tracker-api-6mlb.onrender.com/signUp/tokenValidation/${uriEncodedToken}`;
         let isEmailSent = await sendEmail(process.env.EMAIL, process.env.KEY, req.body.email, url, 'Email Verification');
         if(isEmailSent){
             res.status(200).json({

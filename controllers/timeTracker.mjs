@@ -105,6 +105,7 @@ const getWeeklyReport= async (req, res, next) => {
     ORDER BY week DESC, date ASC
     `;
     const [rows] = await connection.execute(sql, [req.user.id]);
+    // console.log(rows);
     let report = [];
     for(let i = 0; i < rows.length;){
       let currentWeek = rows[i].week;

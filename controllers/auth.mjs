@@ -71,7 +71,7 @@ async function sendVerificationMail(req, res, next) {
         const uriEncodedToken = encodeURIComponent(token);
         await connection.execute('DELETE FROM passResetToken WHERE email = ?', [req.body.email])
         await connection.execute(`INSERT INTO passResetToken (email, token) VALUES (?, ?)`, [req.body.email, token]);
-        let url = `http://localhost:8000/auth/tokenValidation/${uriEncodedToken}`;
+        let url = `https://time-tracker-api-6mlb.onrender.com/auth/tokenValidation/${uriEncodedToken}`;
         let isEmailSent = await sendEmail(process.env.EMAIL, process.env.KEY, req.body.email, url, 'Password Reset');
         if (isEmailSent) {
             res.status(200).json({
