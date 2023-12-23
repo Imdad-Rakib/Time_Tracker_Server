@@ -144,7 +144,12 @@ async function login(req, res, next) {
 
 function logout(req, res) {
     try{
-        res.clearCookie(process.env.COOKIE_NAME);
+        res.clearCookie(process.env.COOKIE_NAME, {
+            domain: 'time-tracker-api-6mlb.onrender.com',
+            path: '/',
+            secure: true,
+            sameSite: 'None',
+        });
         res.status(200).json({
             success:true
         })
