@@ -49,10 +49,10 @@ async function validateToken(req, res, next) {
         const [user] = await connection.execute('SELECT * FROM passResetToken WHERE token = ?', [req.params.token])
         if (user.length){
             await connection.execute('DELETE FROM passResetToken WHERE token = ?', [req.params.token])
-            res.redirect(`http://localhost:${process.env.CLIENT_PORT}/resetpassword`)
+            res.redirect(`https://6587b600b2a7d7f9e64e8b37--glowing-gecko-958940.netlify.app/resetpassword`)
         }
         else {
-            res.redirect(`http://localhost:${process.env.CLIENT_PORT}/blank`)
+            res.redirect(`https://6587b600b2a7d7f9e64e8b37--glowing-gecko-958940.netlify.app/blank`)
         }
     } catch (error) {
         console.log(err);

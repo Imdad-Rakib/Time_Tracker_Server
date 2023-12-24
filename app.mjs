@@ -56,7 +56,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }))
 app.use(
   cors({
-    origin: `http://localhost:${process.env.CLIENT_PORT}`,
+    // origin: `http://localhost:${process.env.CLIENT_PORT}`,
+    origin: 'https://6587b600b2a7d7f9e64e8b37--glowing-gecko-958940.netlify.app',
     // origin: '*', // using this one prevents from setting cookies in client side
     credentials: true
   })
