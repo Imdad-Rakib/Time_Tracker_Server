@@ -9,6 +9,7 @@ The repository includes API endpoints for the execution of the functionalites de
 ## Instruction
 To run this project on your local machine, follow the instructions:
 1. Navigate to your prefered directory and type the following in the terminal:
+   
    ```
    git clone -b dev https://github.com/Imdad-Rakib/Time_Tracker_Server.git
    ```
