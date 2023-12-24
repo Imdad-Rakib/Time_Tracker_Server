@@ -18,7 +18,7 @@ To run this project on your local machine, follow the instructions:
 2. Type the following to install all the dependencies used here:
 
    ```
-   npm init
+   npm install
    ```
 
 3. Create a local database and name it as "Time_Tracking_System". Update in the .env file according to your username and password. You may also choose to use a remote database. In that case, you need to configure your .env file accordingly.
