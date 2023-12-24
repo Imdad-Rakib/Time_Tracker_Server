@@ -49,10 +49,10 @@ async function validateToken(req, res, next) {
         const [user] = await connection.execute('SELECT * FROM passResetToken WHERE token = ?', [req.params.token])
         if (user.length){
             await connection.execute('DELETE FROM passResetToken WHERE token = ?', [req.params.token])
-            res.redirect(`https://glowing-gecko-958940.netlify.app/resetpassword`)
+            res.redirect(`https://time-tracker-system.netlify.app/resetpassword`)
         }
         else {
-            res.redirect(`https://glowing-gecko-958940.netlify.app/blank`)
+            res.redirect(`https://time-tracker-system.netlify.app/blank`)
         }
     } catch (error) {
         console.log(err);

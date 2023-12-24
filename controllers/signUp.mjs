@@ -59,7 +59,7 @@ async function validateToken(req, res, next) {
             next();
         }
         else{
-            res.redirect(`https://glowing-gecko-958940.netlify.app/blank`)
+            res.redirect(`https://time-tracker-system.netlify.app/blank`)
         }
     }catch(error){
         console.log(err);
@@ -73,7 +73,7 @@ async function addUser(req, res, next) {
     try{
         const {name, email, password} = res.locals.user;
         await connection.execute('INSERT INTO users (name, email, password) VALUES (?, ?, ?)', [name, email, password]);
-        res.redirect(`https://glowing-gecko-958940.netlify.app/success`)
+        res.redirect(`https://time-tracker-system.netlify.app/success`)
 
     }catch(err){
         console.log(err);

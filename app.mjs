@@ -57,7 +57,7 @@ app.use(express.urlencoded({ extended: true }))
 app.use(
   cors({
     // origin: `http://localhost:${process.env.CLIENT_PORT}`,
-    origin: 'https://glowing-gecko-958940.netlify.app',
+    origin: 'https://time-tracker-system.netlify.app',
     // origin: '*', // using this one prevents from setting cookies in client side
     credentials: true
   })
