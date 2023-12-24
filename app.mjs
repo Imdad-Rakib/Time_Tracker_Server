@@ -56,9 +56,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }))
 app.use(
   cors({
-    // origin: `http://localhost:${process.env.CLIENT_PORT}`,
-    origin: 'https://time-tracker-system.netlify.app',
-    // origin: '*', // using this one prevents from setting cookies in client side
+    origin: process.env.CLIENT_URL,
     credentials: true
   })
 )

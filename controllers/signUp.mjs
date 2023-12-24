@@ -59,7 +59,7 @@ async function validateToken(req, res, next) {
             next();
         }
         else{
-            res.redirect(`https://time-tracker-system.netlify.app/blank`)
+            res.redirect(`${process.env.CLIENT_URL}/blank`)
         }
     }catch(error){
         console.log(err);
@@ -73,7 +73,7 @@ async function addUser(req, res, next) {
     try{
         const {name, email, password} = res.locals.user;
         await connection.execute('INSERT INTO users (name, email, password) VALUES (?, ?, ?)', [name, email, password]);
-        res.redirect(`https://time-tracker-system.netlify.app/success`)
+        res.redirect(`${process.env.CLIENT_URL}/success`)
 
     }catch(err){
         console.log(err);

@@ -2,7 +2,7 @@ import createHttpError from "http-errors";
 
 // 404 not found handler
 function notFoundHandler(req, res, next) {
-  res.redirect(`https://time-tracker-system.netlify.app/404`);
+  res.redirect(`${process.env.CLIENT_URL}/404`);
   next(createHttpError(404, 'Your requested content was not found!'));
 
 }
