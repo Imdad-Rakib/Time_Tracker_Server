@@ -1,5 +1,5 @@
 ## Time-Tracking-System-Server
-This repository is a part of the project **Time Tracking System**. This is the backend of the system implemented using Express.js 
+This repository is a part of the project **Time Tracking System**. This is the backend of the system implemented using Express.js and MySQL
 
 ## Features
 The repository includes API endpoints for the execution of the functionalites described in the following link:
